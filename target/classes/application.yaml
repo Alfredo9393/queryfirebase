@@ -1,0 +1,2 @@
+spring.application.name: queryfirebase
+server.port: 8090

@@ -23,28 +23,28 @@ public class InformationController extends InformationServiceImpl {
 
     @RequestMapping(value="/imagesfirebase",method= RequestMethod.POST)
     public Object imagesfirebase(@RequestBody ImagesModel body) throws ExecutionException, InterruptedException {
-        Object obj=null;
+    	Object obj= getEmptyValue();
         if(body.getIdcommerce().equals("D1332_1")){
             obj=getDataDummy(body.getIdcommerce());
         }
         if(body.getIdcommerce().equals("D1332_2")){
-            toSleep(3);
+//            toSleep(1);
             obj=getDataDummy(body.getIdcommerce());
         }
         if(body.getIdcommerce().equals("D1332_3")){
-            toSleep(6);
+//            toSleep(1);
             obj=getDataDummy(body.getIdcommerce());
         }
         if(body.getIdcommerce().equals("D1332_4")){
-            toSleep(9);
+//            toSleep(1);
             obj=getDataDummy(body.getIdcommerce());
         }
         if(body.getIdcommerce().equals("D1332_5")){
-            toSleep(15);
+//            toSleep(1);
             obj=getDataDummy(body.getIdcommerce());
         }
         if(body.getIdcommerce().equals("D1332_6")){
-            toSleep(20);
+//            toSleep(1);
             obj=getDataDummy(body.getIdcommerce());
         }
         System.out.println("result "+obj);
@@ -53,28 +53,28 @@ public class InformationController extends InformationServiceImpl {
 
     @RequestMapping(value="/storequery",method= RequestMethod.POST)
     public Object storequery(@RequestBody ImagesModel body) throws ExecutionException, InterruptedException {
-        Object obj=null;
+        Object obj= getEmptyValue();
         if(body.getIdcommerce().equals("D1332_1")){
             obj=getDataDummy(body.getIdcommerce());
         }
         if(body.getIdcommerce().equals("D1332_2")){
-            toSleep(3);
+//            toSleep(1);
             obj=getDataDummy(body.getIdcommerce());
         }
         if(body.getIdcommerce().equals("D1332_3")){
-            toSleep(6);
+//            toSleep(1);
             obj=getDataDummy(body.getIdcommerce());
         }
         if(body.getIdcommerce().equals("D1332_4")){
-            toSleep(9);
+//            toSleep(1);
             obj=getDataDummy(body.getIdcommerce());
         }
         if(body.getIdcommerce().equals("D1332_5")){
-            toSleep(15);
+//            toSleep(1);
             obj=getDataDummy(body.getIdcommerce());
         }
         if(body.getIdcommerce().equals("D1332_6")){
-            toSleep(20);
+//            toSleep(1);
             obj=getDataDummy(body.getIdcommerce());
         }
         System.out.println("result "+obj);
@@ -95,6 +95,12 @@ public class InformationController extends InformationServiceImpl {
         result_object.put("address", address_object);
         
         return result_object;
+    }
+    
+    public Object getEmptyValue() {
+    	Map<String, Object> result_object = new HashMap<>();
+    	result_object.put("value", "empty");
+    	return result_object;
     }
     
     public static void toSleep(int segundos){
